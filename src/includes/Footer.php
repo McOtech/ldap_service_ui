@@ -13,42 +13,33 @@ class Footer
 
 <?php if ($_GET['r'] != 'login' && $_GET['r'] != 'register') { ?>
 </div>
-<!-- /#wrapper -->
-
-<!-- jQuery -->
-<script src="assets/js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="assets/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-<?php }else { ?>
-
-<hr>
-
-<!-- Footer -->
-<footer>
-  <div class="row">
-    <div class="col-lg-12">
-      <p>Copyright &copy; Your Website 2014</p>
-    </div>
+<!-- content-wrapper ends -->
+<!-- partial:../../partials/_footer.html -->
+<footer class="footer">
+  <div class="container-fluid clearfix">
+    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Kisii University</span>
+    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Visit <a
+        href="https://kisiiuniversity.ac.ke/" target="_blank">Kisii University</a>
+      website</span>
   </div>
-  <!-- /.row -->
 </footer>
-
+<!-- partial -->
 </div>
-<!-- /.container -->
-
-<!-- jQuery -->
-<script src="assets/js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="assets/js/bootstrap.min.js"></script>
-
+<!-- main-panel ends -->
+<?php } ?>
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="assets/js/shared/off-canvas.js"></script>
+<script src="assets/js/shared/misc.js"></script>
+<!-- endinject -->
+<script src="assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
 </body>
 
 </html>
-
-<?php } ?>

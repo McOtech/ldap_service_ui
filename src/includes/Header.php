@@ -2,276 +2,267 @@
 
 namespace Paudel\App\includes;
 
+use Paudel\App\Traits\Utils;
+
 class Header
 {
+  use Utils;
   function __construct()
   {
   }
 }
 
+$header = new header();
+
 ?>
 
-<?php if ($_GET['r'] != 'login' && $_GET['r'] != 'register') { ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Paul Otieno">
-
-  <title>SB Admin - Bootstrap Admin Template</title>
-
-  <!-- Bootstrap Core CSS -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="assets/css/sb-admin.css" rel="stylesheet">
-
-
-  <!-- Custom Fonts -->
-  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Kisii University</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+  <link rel="stylesheet" href="assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="assets/css/shared/style.css">
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="assets/css/demo_1/style.css">
+  <!-- End Layout styles -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
 </head>
 
 <body>
+  <div class="container-scroller">
+    <?php if ($_GET['r'] != 'login' && $_GET['r'] != 'register') { ?>
 
-  <div id="wrapper">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">SB Admin</a>
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="<?php echo $header->url('profile') ?>">
+          <img src="assets/images/logo.svg" alt="logo" /> </a>
+        <a class="navbar-brand brand-logo-mini" href="<?php echo $header->url('profile') ?>">
+          <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
       </div>
-      <!-- Top Menu Items -->
-      <ul class="nav navbar-right top-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
-              class="caret"></b></a>
-          <ul class="dropdown-menu message-dropdown">
-            <li class="message-preview">
-              <a href="#">
-                <div class="media">
-                  <span class="pull-left">
-                    <img class="media-object" src="http://placehold.it/50x50" alt="">
-                  </span>
-                  <div class="media-body">
-                    <h5 class="media-heading">
-                      <strong>John Smith</strong>
-                    </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                  </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block"><i
+              class="mdi mdi-cellphone-wireless icon-sm text-primary"></i> Help :
+            <?php echo getenv('HELP'); ?></li>
+          <!-- <li class="nav-item dropdown language-dropdown">
+            <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#"
+              data-toggle="dropdown" aria-expanded="false">
+              <div class="d-inline-flex mr-0 mr-md-3">
+                <div class="flag-icon-holder">
+                  <i class="mdi mdi-cellphone-basic"></i>
+                </div>
+              </div>
+              <span class="profile-text font-weight-medium d-none d-md-block">English</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
+              <a class="dropdown-item">
+                <div class="flag-icon-holder">
+                  <i class="flag-icon flag-icon-us"></i>
+                </div>English
+              </a>
+              <a class="dropdown-item">
+                <div class="flag-icon-holder">
+                  <i class="flag-icon flag-icon-fr"></i>
+                </div>French
+              </a>
+              <a class="dropdown-item">
+                <div class="flag-icon-holder">
+                  <i class="flag-icon flag-icon-ae"></i>
+                </div>Arabic
+              </a>
+              <a class="dropdown-item">
+                <div class="flag-icon-holder">
+                  <i class="flag-icon flag-icon-ru"></i>
+                </div>Russian
+              </a>
+            </div>
+          </li> -->
+        </ul>
+        <form class="ml-auto search-form d-none d-md-block" action="#">
+          <div class="form-group">
+            <input type="search" class="form-control" placeholder="Search Here">
+          </div>
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown"
+              aria-expanded="false">
+              <i class="mdi mdi-bell-outline"></i>
+              <span class="count">7</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+              aria-labelledby="messageDropdown">
+              <a class="dropdown-item py-3">
+                <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
+                <span class="badge badge-pill badge-primary float-right">View all</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="../../assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
+                  <p class="font-weight-light small-text"> The meeting is cancelled </p>
                 </div>
               </a>
-            </li>
-            <li class="message-preview">
-              <a href="#">
-                <div class="media">
-                  <span class="pull-left">
-                    <img class="media-object" src="http://placehold.it/50x50" alt="">
-                  </span>
-                  <div class="media-body">
-                    <h5 class="media-heading">
-                      <strong>John Smith</strong>
-                    </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                  </div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="../../assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
+                  <p class="font-weight-light small-text"> The meeting is cancelled </p>
                 </div>
               </a>
-            </li>
-            <li class="message-preview">
-              <a href="#">
-                <div class="media">
-                  <span class="pull-left">
-                    <img class="media-object" src="http://placehold.it/50x50" alt="">
-                  </span>
-                  <div class="media-body">
-                    <h5 class="media-heading">
-                      <strong>John Smith</strong>
-                    </h5>
-                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                  </div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="../../assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
+                  <p class="font-weight-light small-text"> The meeting is cancelled </p>
                 </div>
               </a>
-            </li>
-            <li class="message-footer">
-              <a href="#">Read All New Messages</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b
-              class="caret"></b></a>
-          <ul class="dropdown-menu alert-dropdown">
-            <li>
-              <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-            </li>
-            <li>
-              <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#">View All</a>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
-              class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
-          <li>
-            <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            </div>
           </li>
-          <li>
-            <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-          </li>
-          <li>
-            <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-          </li>
-          <li>
-            <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-          </li>
-          <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> matatu</a>
-          </li>
-          <li>
-            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> loans</a>
-          </li>
-          <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> users
-              <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i>Profile</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-email-outline"></i>
+              <span class="count bg-success">3</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+              aria-labelledby="notificationDropdown">
+              <a class="dropdown-item py-3 border-bottom">
+                <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
+                <span class="badge badge-pill badge-primary float-right">View all</span>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-alert m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0"> Just now </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-settings m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
+                  <p class="font-weight-light small-text mb-0"> Private message </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item py-3">
+                <div class="preview-thumbnail">
+                  <i class="mdi mdi-airballoon m-auto text-primary"></i>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0"> 2 days ago </p>
+                </div>
+              </a>
+            </div>
+          </li> -->
+          <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <img class="img-xs rounded-circle" src="assets/images/faces/avatar.png" alt="Profile image"> </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="assets/images/faces/avatar.png" alt="Profile image">
+                <p class="mb-1 mt-3 font-weight-semibold">Victor Nyangasi</p>
+                <p class="font-weight-light text-muted mb-0">victor@gmail.com</p>
+              </div>
+              <a href="<?php echo $header->url('profile') ?>" class="dropdown-item">My Profile
+                <!-- <span class="badge badge-pill badge-danger">1</span>
+                <i class="dropdown-item-icon ti-dashboard"></i> -->
+              </a>
+              <a href="<?php echo $header->url('settings') ?>" class="dropdown-item">Settings<i
+                  class="dropdown-item-icon ti-comment-alt"></i></a>
+              <a href="<?php echo $header->url('signout') ?>" class="dropdown-item">Sign Out<i
+                  class="dropdown-item-icon ti-power-off"></i></a>
+            </div>
           </li>
         </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
       </div>
-      <!-- /.navbar-collapse -->
     </nav>
-    <?php } else { ?>
-    <!DOCTYPE html>
-    <html lang="en">
+    <!-- partial -->
+    <?php } ?>
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <?php if ($_GET['r'] != 'login' && $_GET['r'] != 'register') { ?>
 
-    <head>
-
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
-
-      <title>Blog Post - Start Bootstrap Template</title>
-
-      <!-- Bootstrap Core CSS -->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-      <!-- Custom CSS -->
-      <link href="assets/css/blog-post.css" rel="stylesheet">
-
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    </head>
-
-    <body>
-
-      <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+              <div class="profile-image">
+                <img class="img-xs rounded-circle" src="assets/images/faces/avatar.png" alt="profile image">
+                <div class="dot-indicator bg-success"></div>
+              </div>
+              <div class="text-wrapper">
+                <p class="profile-name">Victor Nyangasi</p>
+                <p class="designation">IN13/12345/12</p>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item nav-category">Main Menu</li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $header->url('profile') ?>">
+              <i class="menu-icon typcn typcn-document-text"></i>
+              <span class="menu-title">Profile</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon typcn typcn-coffee"></i>
+              <span class="menu-title">Basic UI Elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a>
+                </li>
+              </ul>
+            </div>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $header->url('settings') ?>">
+              <i class="menu-icon typcn typcn-shopping-bag"></i>
+              <span class="menu-title">Settings</span>
+            </a>
+          </li>
+        </ul>
       </nav>
-
-      <!-- Page Content -->
-      <div class="container">
-        <?php }?>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <?php } ?>
