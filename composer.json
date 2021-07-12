@@ -1,0 +1,17 @@
+{
+  "name": "paudel/app",
+  "description": "Kisii University LDAP server UI",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Paudel\\App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "McOtech",
+      "email": "otienopaul36@gmail.com"
+    }
+  ],
+  "require": {}
+}
