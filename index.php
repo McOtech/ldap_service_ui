@@ -5,10 +5,14 @@ use Dotenv\Dotenv;
 use Paudel\App\includes\Footer;
 use Paudel\App\includes\Header;
 use Paudel\App\routes\Error404;
+use Paudel\App\routes\Groups;
 use Paudel\App\routes\Home;
 use Paudel\App\routes\Login;
+use Paudel\App\routes\OrganizationUnit;
 use Paudel\App\routes\Profile;
 use Paudel\App\routes\Register;
+use Paudel\App\routes\Settings;
+use Paudel\App\routes\Users;
 
 require_once realpath("vendor/autoload.php");
 
@@ -37,6 +41,18 @@ switch ($route) {
     break;
   case 'profile':
     new Profile();
+    break;
+  case 'settings':
+    new Settings();
+    break;
+  case 'ou':
+    new OrganizationUnit();
+    break;
+  case 'groups':
+    new Groups();
+    break;
+  case 'users':
+    new Users();
     break;
   default:
     new Error404();

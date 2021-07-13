@@ -260,6 +260,24 @@ $header = new header();
               <span class="menu-title">Settings</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $header->url('ou') ?>">
+              <i class="menu-icon typcn typcn-shopping-bag"></i>
+              <span class="menu-title">Organization Units</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $header->url('groups') ?>">
+              <i class="menu-icon typcn typcn-shopping-bag"></i>
+              <span class="menu-title">Groups</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $header->url('users') ?>">
+              <i class="menu-icon typcn typcn-shopping-bag"></i>
+              <span class="menu-title">Users</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->
